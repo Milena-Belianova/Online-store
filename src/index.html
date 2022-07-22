@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- The Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <div class="modal__header">
+        <span id="modal__button-close" class="close">&times;</span>
+      </div>
+      <div class="modal__main">
+        <h2 class="modal__title">Sorry, all slots are full.</h2>
+        <p>The maximum number of items in the cart is 20.</p>
+      </div>
+      <div class="modal__footer">
+        <button id="modal__button-ok" class="modal__button-ok">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <h1>Online Store</h1>
+    <div class="cart">
+      <div id="cart-products-number" class="cart-products-number">20</div>
+      <div class="cart__svg"></div>
+    </div>
+  </header>
+
+  <main id="main" class="main">
+
+    <div class="filters__container">
+
+      <div class="filters-by-value__container">
+
+        <div class="filter-by-company">
+          <p class="filter-by-company__text">Company</p>
+          <button class="filter-by-company__button filter-by-company__button_cake">CAKE</button>
+          <button class="filter-by-company__button filter-by-company__button_segway">SEGWAY</button>
+          <button class="filter-by-company__button filter-by-company__button_sur-ron">SUR-RON</button>
+          <button class="filter-by-company__button filter-by-company__button_talaria">TALARIA</button>
+        </div>
+
+        <div class="filter-by-weight">
+          <p class="filter-by-weight__text">Weight(kg)</p>
+          <button class="filter-by-weight__button filter-by-weight__button_60">60</button>
+          <button class="filter-by-weight__button filter-by-weight__button_80">80</button>
+        </div>
+
+        <div class="filter-by-color">
+          <p class="filter-by-color__text">Color</p>
+          <button class="filter-by-color__button filter-by-color__button_white" data-color="white"></button>
+          <button class="filter-by-color__button filter-by-color__button_green" data-color="green"></button>
+          <button class="filter-by-color__button filter-by-color__button_yellow" data-color="yellow"></button>
+          <button class="filter-by-color__button filter-by-color__button_blue" data-color="blue"></button>
+          <button class="filter-by-color__button filter-by-color__button_red" data-color="red"></button>
+          <button class="filter-by-color__button filter-by-color__button_black" data-color="black"></button>
+        </div>
+
+        <div class="filter-popular">
+          <label for="popular" class="filters-popular__checkbox-label">Popular</label>
+          <input type="checkbox" name="popular" id="popular" class="filters-popular__checkbox">
+        </div>
+      </div>
+
+      <div class="filters-by-range__container">
+        <div class="filters-by-range__slider">
+          <p class="">Amount left</p>
+          <div id="amount-slider" class="amount__slider round__slider"></div>
+        </div>
+        <div class="filters-by-range__slider">
+          <p class="">Year</p>
+          <div id="year-slider" class="year__slider round__slider"></div>
+        </div>
+      </div>
+
+      <div class="filters-search-reset__container">
+        <div class="search__container">
+          <input id="search-input" type="search" class="search__input" placeholder="Search..." autofocus>
+          <button id="search-btn" class="search__btn"><i id="search-icon" class="search__icon" src="" alt="loupe"></i>
+          </button>
+        </div>
+        <div class="reset__container">
+          <button id="reset-filters__button" class="reset-filters__button reset__button">Reset Filters</button>
+          <button id="reset-settings__button" class="reset-settings__button reset__button">Reset Settings</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sort__container">
+      <hr class="sort__line">
+      <label for="sort">Sort By</label>
+      <select name="sort" id="sort" class="sort__input">
+        <option value="name-a">Name (A-Z)</option>
+        <option value="name-z">Name (Z-A)</option>
+        <option value="year-oldest">Year (Oldest)</option>
+        <option value="year-newest">Year (Newest)</option>
+      </select>
+    </div>
+
+    <div class="products__container">
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__data">
+      <p>©</p>
+      <p>2022</p>
+      <a href="https://github.com/Milena-Belianova" class="github"> github</a>
+    </div>
+
+    <a href="https://rs.school/js-stage0/" class="rss-logo"></a>
+  </footer>
+</body>
+
+</html>
