@@ -1,4 +1,3 @@
-
 const createNoProductsMessageFragment = () => {
   const fragment: DocumentFragment = document.createDocumentFragment();
 
@@ -9,7 +8,6 @@ const createNoProductsMessageFragment = () => {
   fragment.append(noProductMessage);
   return fragment;
 }
-
 
 export const showNoProductsMessage = (): void => {
  const mainContainer: HTMLElement = document.querySelector('.products__container')!;

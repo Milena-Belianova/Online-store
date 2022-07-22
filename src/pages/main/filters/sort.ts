@@ -4,19 +4,19 @@ import { Product, Products } from '../render/productsObj';
 export const sortInput: HTMLSelectElement = document.querySelector('.sort__input')!;
 
 export const sortByNameAZ = (prod: Array<Product>): Array<Product> => {
-  return prod.sort((a, b) => a.title.localeCompare(b.title));
+  return prod ? prod.sort((a, b) => a.title.localeCompare(b.title)) : prod;
 };
 
 export const sortByNameZA = (prod: Array<Product>): Array<Product> => {
-  return prod.sort((a, b) => b.title.localeCompare(a.title));
+  return prod ? prod.sort((a, b) => b.title.localeCompare(a.title)) : prod;
 };
 
 export const sortByYearOldest = (prod: Array<Product>): Array<Product> => {
-  return prod.sort((a, b) => a.year.localeCompare(b.year));
+  return prod ? prod.sort((a, b) => a.year.localeCompare(b.year)) : prod;
 };
 
 export const sortByYearNewest = (prod: Array<Product>): Array<Product> => {
-  return prod.sort((a, b) => b.year.localeCompare(a.year));
+  return prod ? prod.sort((a, b) => b.year.localeCompare(a.year)) : prod;
 };
 
 export const sortBy = (productsArr: Array<Product> = Products): Array<Product> => {

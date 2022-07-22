@@ -2,7 +2,6 @@ import { state } from '../../..';
 import './modal.scss';
 
 const cartProductNumber = document.getElementById('cart-products-number')! as HTMLDivElement;
-let productNumber: number = 0;
 export const modal: HTMLElement = document.getElementById('modal')!;
 
 

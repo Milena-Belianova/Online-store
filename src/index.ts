@@ -1,10 +1,11 @@
 import './reset.scss';
 import './global.scss';
 import './pages/main/filters/filters.scss';
-import { initStaticHandlers, renderState } from './pages/main/render/renderProducts';
+import { handleFilterChange, initStaticHandlers, renderState } from './pages/main/render/renderProducts';
 import { getRangeSlidersAPIs } from './pages/main/render/renderRangeSliders';
 import { Product, Products } from './pages/main/render/productsObj';
 import './pages/main/localStorage/localStorage';
+import { API } from 'nouislider';
 
 export type Filters = {
   company: Array<string>;
@@ -34,9 +35,28 @@ class State {
   sort: string = 'name-a';
 }
 
+export const popularCheckbox: HTMLInputElement = document.querySelector('#popular')!;
+export let amount: API;
+export let year: API;
+
 export const state = new State();
 
-export const { amount, year } = getRangeSlidersAPIs();
+export const startApp = () => {
+  if (localStorage.getItem('state')) {
+    const savedStateJSON = localStorage.getItem('state')!;
+    const savedState = JSON.parse(savedStateJSON);
+    state.filters = savedState.filters;
+    state.sort = savedState.sort;
+    state.cart = savedState.cart.map((title: string) => Products.find((p) => p.title === title));
+    console.log('getLocalStorage', state);
+  }
 
-initStaticHandlers();
-renderState();
+  const sliders = getRangeSlidersAPIs(state.filters.amountLeft, state.filters.year);
+  amount = sliders.amount;
+  year = sliders.year;
+  initStaticHandlers();
+  handleFilterChange();
+};
+
+//so that module import won't trigger DOM changes while unit testing
+window.addEventListener('load', startApp);

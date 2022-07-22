@@ -7,9 +7,9 @@ import { Product } from '../render/productsObj';
 const yearSlider: HTMLElement = document.getElementById('year-slider')!;
 const amountSlider: HTMLElement = document.getElementById('amount-slider')!;
 
-export const createYearSlider = (): API =>
+export const createYearSlider = (start = ['2018', '2022']): API =>
   create(yearSlider, {
-    start: [2018, 2022],
+    start,
     connect: true,
     tooltips: true,
     step: 1,
@@ -24,9 +24,9 @@ export const createYearSlider = (): API =>
     // },
   });
 
-export const createAmountSlider = (): API =>
+export const createAmountSlider = (start = ['1', '8']): API =>
   create(amountSlider, {
-    start: [1, 8],
+    start,
     connect: true,
     tooltips: true,
     step: 1,

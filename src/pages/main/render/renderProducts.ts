@@ -1,7 +1,7 @@
 import { Product, Products } from './productsObj';
 import './products.scss';
-import { getPopularFilteredProducts, popularCheckbox } from '../filters/popularFilter';
-import { amount, Filters, getDefaultFilters, state, year } from '../../..';
+import { getPopularFilteredProducts } from '../filters/popularFilter';
+import { amount, Filters, getDefaultFilters, popularCheckbox, state, year } from '../../..';
 import { changeProductNumberInCart, hideModal, modal, showModal } from '../cart/productsInCart';
 import { getColorFilteredProducts } from '../filters/colorFilter';
 import { getCompanyFilteredProducts } from '../filters/companyFilter';
@@ -169,7 +169,6 @@ export const initStaticHandlers = () => {
 };
 
 export const renderState = (): void => {
-  console.log('render', state);
   const productsContainer: HTMLDivElement = document.querySelector('.products__container')!;
   productsContainer.innerHTML = '';
   state.cards.forEach((item) => productsContainer.append(createProduct(item)));
